@@ -1,0 +1,19 @@
+.link-logo {
+  width: 38px;
+  height: 38px;
+  background-image: url('../../images/logo__header.svg');
+  background-color: transparent;
+  transition: 0.3s;
+  margin-right: 44px;
+}
+
+.link-logo:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+@media (max-width: 420px) {
+  .link-logo {
+    margin: 0 auto 0;
+  }
+}

@@ -1,0 +1,161 @@
+.about-me {
+  font-family: 'Inter', 'Arial', serif;
+  font-style: normal;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 1);
+  padding: 0 70px;
+  max-width: 1280px;
+  margin: 0 auto 0;
+}
+
+.about-me__student {
+  color: rgba(0, 0, 0, 1);
+  font-weight: 400;
+  font-size: 22px;
+  border-bottom: 1px solid rgba(218, 218, 218, 1);
+  margin: 110px 0 0;
+  padding-bottom: 23px;
+  line-height: 1.22;
+}
+
+.about-me__profile {
+  color: rgba(0, 0, 0, 1);
+  display: flex;
+  margin: 90px 0 101px;
+}
+
+.about-me__textunit {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-me__title {
+  letter-spacing: -0.04em;
+  margin: 0;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1.16;
+}
+
+.about-me__subtitle {
+  mix-blend-mode: normal;
+  margin: 18px 0 26px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.11;
+}
+
+.about-me__text {
+  max-width: 600px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.57;
+}
+
+.about-me__profilegithab {
+  text-decoration: none;
+  margin: 99px 0 0;
+  transition: 0.3s;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.21;
+  margin: 99px 0 0;
+  transition: 0.3s;
+}
+
+.about-me__profilegithab:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.about-me__img {
+  mix-blend-mode: normal;
+  object-fit: cover;
+  margin-left: auto;
+  width: 270px;
+  height: 327px;
+  border-radius: 10px;
+}
+
+@media (max-width: 891px) {
+  .about-me {
+    padding: 0 50px;
+  }
+
+  .about-me__student {
+    margin: 90px 0 0;
+  }
+
+  .about-me__profile {
+    margin: 66px 0 91px;
+    column-gap: 49px;
+  }
+
+  .about-me__title {
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  .about-me__subtitle {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .about-me__text {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .about-me__img {
+    width: 255px;
+    height: 307px;
+  }
+
+  .about-me__profilegithab {
+    margin: 87px 0 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .about-me {
+    padding: 0 14px;
+  }
+
+  .about-me__title {
+    margin: 70px 0 0;
+    padding-bottom: 28px;
+  }
+
+  .about-me__profile {
+    margin: 60px 0 101px;
+    flex-direction: column-reverse;
+    row-gap: 40px;
+  }
+
+  .about-me__img {
+    margin: 0 auto 0;
+    width: 292px;
+    height: 352px;
+  }
+
+  .about-me__title {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .about-me__subtitle {
+    margin: 20px 0 20px;
+    font-size: 11px;
+    line-height: 1.33;
+  }
+
+  .about-me__text {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .about-me__profilegithab {
+    margin: 40px 0 0;
+  }
+}

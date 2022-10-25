@@ -1,0 +1,16 @@
+.app {
+  font-family: 'Inter', 'Arial', serif;
+  font-style: normal;
+  margin: 0 auto 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 420px) {
+  .app {
+    position: absolute;
+  }
+}
