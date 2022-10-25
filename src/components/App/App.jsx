@@ -11,7 +11,6 @@ import Register from '../Register/Register';
 import Login from '../Login/Login';
 import Profile from '../Profile/Profile';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
-import StatusPopup from '../StatusPopup/StatusPopup';
 import { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { SAVED_MOVIE } from '../../utils/constants';
@@ -53,7 +52,6 @@ const App = () => {
         </Routes>
       </main>
       <Footer />
-      <StatusPopup />
       <BurgerPopup isPopupOpened={isPopupOpened} handlePopupOpen={handlePopupOpen} />
     </div>
   )
