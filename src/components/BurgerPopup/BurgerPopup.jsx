@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import './BurgerPopup.css';
 import { Link, NavLink } from 'react-router-dom';
@@ -18,7 +19,7 @@ const BurgerPopup = ({ isPopupOpened, handlePopupOpen }) => {
             Фильмы
           </NavLink>
           <NavLink to="/saved-movies" className={putActive}>
-            Сохранённые фильмы
+            Сохранённые&nbsp;фильмы
           </NavLink>
 
           <div className="burger-button__accountblock">
