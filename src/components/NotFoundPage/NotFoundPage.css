@@ -1,5 +1,5 @@
 .not-found-page {
-  width: 100%;
+  width: 1280px;
   height: 100vh;
   font-family: 'Inter', 'Arial', serif;
   font-style: normal;
@@ -34,7 +34,8 @@
   opacity: 70%;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 320px) {
+
   .not-found-page__title {
     font-weight: 400;
     font-size: 80px;

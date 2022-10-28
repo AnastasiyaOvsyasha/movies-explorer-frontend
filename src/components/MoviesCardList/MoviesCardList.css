@@ -3,6 +3,7 @@
   font-style: normal;
   margin: 70px auto 80px;
   padding: 0 70px;
+  max-width: 1280px;
 }
 
 .movies-card-list__container {
@@ -37,7 +38,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 891px) {
+@media (max-width: 768px) {
   .movies-card-list {
     margin: 70px 30px 80px;
     padding: 0;
@@ -49,7 +50,7 @@
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 320px) {
   .movies-card-list {
     margin: 70px 10px 80px;
 

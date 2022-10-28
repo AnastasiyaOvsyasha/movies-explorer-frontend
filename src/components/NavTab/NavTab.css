@@ -41,7 +41,7 @@
   color: rgba(0, 0, 0, 1);
 }
 
-@media (max-width: 891px) {
+@media (max-width: 768px) {
   .nav-tab {
     margin: 0 20px 0 20px;
   }
@@ -64,7 +64,7 @@
   column-gap: 10px;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 320px) {
   .nav-tab {
     margin: 0 14px 0 14px;
   }

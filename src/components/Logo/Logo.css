@@ -12,7 +12,7 @@
   opacity: 80%;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 320px) {
   .link-logo {
     margin: 0 auto 0;
   }

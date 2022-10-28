@@ -100,7 +100,7 @@
   color: rgba(160, 160, 160, 1);
 }
 
-@media (max-width: 891px) {
+@media (max-width: 768px) {
   .about-project {
     margin: 0 50px;
     padding: 90px 0;
@@ -113,7 +113,7 @@
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 320px) {
   .about-project {
     margin: 0 18px;
     padding: 70px 0;

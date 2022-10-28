@@ -27,13 +27,13 @@
   background: rgba(255, 255, 255, 1);
 }
 
-@media (max-width: 891px) {
+@media (max-width: 768px) {
   .header__container {
     padding: 18px 30px;
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 320px) {
 
   .header {
     margin-bottom: 14px;

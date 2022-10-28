@@ -27,13 +27,13 @@ const MoviesCard = ({ movie }) => {
           <h4 className="movies-card__title">{nameRU}</h4>
           <p className="movies-card__duration">{getTimeFromMins(duration)}</p>
         </div>
-        <div
+        <button
           className={`${pathname === "/saved-movies"
             ? "movies-card__delete-btn"
             : "movies-card__type_main"
             } ${isSaved ? "movies-card__type_main_active " : ""}`}
           onClick={handleClickSaveMovie}
-        ></div>
+        ></button>
       </div>
       <img
         className="movies-card__img"

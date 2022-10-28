@@ -3,6 +3,7 @@
   height: 100%;
   display: none;
   position: absolute;
+  position: fixed;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -95,15 +96,8 @@
   margin: 8px 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 320px) {
   .burger-button__container {
-    height: 1024px;
+    width: 100%;
   }
 }
-
-  @media (max-width: 420px) {
-    .burger-button__container {
-      width: 100%;
-      height: 780px;
-    }
-  }

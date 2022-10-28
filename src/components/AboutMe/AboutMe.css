@@ -62,6 +62,7 @@
   line-height: 1.21;
   margin: 99px 0 0;
   transition: 0.3s;
+  color: rgba(0, 0, 0, 1);
 }
 
 .about-me__profilegithab:hover {
@@ -78,7 +79,7 @@
   border-radius: 10px;
 }
 
-@media (max-width: 891px) {
+@media (max-width: 768px) {
   .about-me {
     padding: 0 50px;
   }
@@ -117,7 +118,7 @@
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 525px) {
   .about-me {
     padding: 0 14px;
   }

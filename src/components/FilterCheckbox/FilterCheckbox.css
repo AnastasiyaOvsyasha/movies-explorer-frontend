@@ -65,10 +65,9 @@
     min-width: 168px;
     padding: 0 20px 0 19px;
   }
-
 }
 
-@media screen and (max-width: 428px) {
+@media screen and (max-width: 320px) {
 
   .filter-checkbox {
     max-width: 100%;
