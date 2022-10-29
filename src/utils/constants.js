@@ -2,7 +2,7 @@ const MOVIES_FRONT_URL = "https://api.nomoreparties.co";
 
 const REGEXP_EMAIL = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
-const SAVED_MOVIE = {
+const SAVED_MOVIE = { //удалить в level-3
   id: 1,
   nameRU: "«Роллинг Стоунз» в изгнании",
   nameEN: "Stones in Exile",

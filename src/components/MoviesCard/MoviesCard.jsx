@@ -33,6 +33,7 @@ const MoviesCard = ({ movie }) => {
             : "movies-card__type_main"
             } ${isSaved ? "movies-card__type_main_active " : ""}`}
           onClick={handleClickSaveMovie}
+          type='button'
         ></button>
       </div>
       <img
