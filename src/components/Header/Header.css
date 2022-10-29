@@ -1,0 +1,45 @@
+.header {
+  background-color: rgba(255, 255, 255, 1);
+  margin-bottom: 20px;
+}
+
+.header__container {
+  box-sizing: border-box;
+  height: 74px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_status_hidden {
+  display: none;
+}
+
+.header_status_logged-in {
+  width: 100%;
+  color: rgba(255, 255, 255, 1);
+}
+
+.header_status_on-movies {
+  background: rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 768px) {
+  .header__container {
+    padding: 18px 30px;
+  }
+}
+
+@media (max-width: 320px) {
+
+  .header {
+    margin-bottom: 14px;
+  }
+
+  .header__container {
+    padding: 18px 14px;
+  }
+}

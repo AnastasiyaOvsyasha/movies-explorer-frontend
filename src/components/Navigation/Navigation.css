@@ -1,0 +1,116 @@
+.navigation__link_active {
+  margin: 0 30px 0 auto;
+  font-family: 'Inter', 'Arial', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: rgba(0, 0, 0, 1);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navigation__link_active:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.navigation__btn_signin {
+  width: 76px;
+  height: 32px;
+  font-family: 'Inter', 'Arial', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  border-radius: 3px;
+  border: none;
+  background-color: rgba(61, 220, 132, 1);
+  transition: 0.3s;
+}
+
+.nnavigation__btn_signin:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+.navigation__nav {
+  margin-right: auto;
+  display: flex;
+  justify-self: center;
+  column-gap: 16px;
+}
+
+.navigation__item_link_movies {
+  margin: 0;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+  transition: 0.3s;
+}
+
+.navigation__item_link_movies:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.navigation__link_type {
+  padding: 0;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+  box-sizing: border-box;
+  background-color: rgba(249, 249, 249, 1);
+  border-radius: 20px;
+  width: 100px;
+  margin-left: 20px;
+}
+
+.navigation__link_type_profile {
+  margin: 0;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 12px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+  transition: 0.3s;
+  text-align: center;
+  width: 100px;
+}
+
+.navigation__link_type_profile:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.navigation__burger {
+  width: 44px;
+  height: 44px;
+  border: none;
+  background-image: url('../../images/burger__menu_my_black.svg');
+  background-color: transparent;
+  background-position: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navigation__burger:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+@media (max-width: 320px) {
+  .navigation__link_active {
+    margin-right: 14px;
+    font-size: 10px;
+  }
+
+  .navigation__btn_signin {
+    width: 54px;
+    height: 26px;
+    font-size: 10px;
+  }
+}

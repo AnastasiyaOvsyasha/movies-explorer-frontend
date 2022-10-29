@@ -1,0 +1,175 @@
+.about-project {
+  font-family: 'Inter', 'Arial', serif;
+  font-style: normal;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 110px 70px;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 1);
+}
+
+.about-project__title {
+  margin: 0;
+  padding-bottom: 23px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.22;
+  border-bottom: 1px solid rgba(218, 218, 218, 1);
+  letter-spacing: -0.04em;
+}
+
+.about-project__list {
+  margin: 70px 0 110px;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  column-gap: 40px;
+}
+
+.about-project__item {
+  max-width: 550px;
+}
+
+.about-project__subtitle {
+  margin: 0 0 26px 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.about-project__text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.42;
+}
+
+.about-project__time-line {
+  display: flex;
+  column-gap: 0;
+}
+
+.about-project__time-line_first {
+  width: 228px;
+}
+
+.about-project__time_type_short {
+  margin: 0 0 14px 0;
+  padding-top: 9px;
+  height: 36px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  text-align: center;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(61, 220, 132, 1);
+}
+
+.about-project__time-line_taskbek {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.21;
+  text-align: center;
+  color: rgba(139, 139, 139, 1);
+}
+
+.about-project__time-line_second {
+  flex-grow: 1;
+}
+
+.about-project__time_type_long {
+  margin: 0 0 14px 0;
+  padding-top: 9px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  text-align: center;
+  box-sizing: border-box;
+  height: 36px;
+  background-color: rgba(242, 242, 242, 1);
+}
+
+.about-project__time-line_taskfront {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.21;
+  text-align: center;
+  color: rgba(160, 160, 160, 1);
+}
+
+@media (max-width: 768px) {
+  .about-project {
+    margin: 0 50px;
+    padding: 90px 0;
+  }
+
+  .about-project__list {
+    margin: 70px 0 93px;
+    display: flex;
+    column-gap: 30px;
+  }
+}
+
+@media (max-width: 320px) {
+  .about-project {
+    margin: 0 18px;
+    padding: 70px 0;
+    color: rgba(0, 0, 0, 1);
+  }
+
+  .about-project__title {
+    padding-bottom: 28px;
+    font-size: 18px;
+    line-height: 1.22;
+  }
+
+  .about-project__list {
+    margin: 60px 0 60px;
+    flex-direction: column;
+    row-gap: 56px;
+  }
+
+  .about-project__subtitle {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    line-height: 1.22;
+  }
+
+  .about-project__text {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .about-project__time-line_first {
+    width: 100px;
+  }
+
+  .about-project__time_type_short {
+    margin: 0 0 10px 0;
+    padding-top: 11px;
+    height: 35px;
+    font-size: 11px;
+    line-height: 1.18;
+  }
+
+  .about-project__time-line_taskbek {
+    font-size: 11px;
+    line-height: 1.18;
+  }
+
+  .about-project__time_type_long {
+    margin: 0 0 10px 0;
+    padding-top: 11px;
+    height: 35px;
+    font-size: 11px;
+    line-height: 1.18;
+  }
+
+  .about-project__time-line_taskfront {
+    font-size: 11px;
+    line-height: 1.18;
+  }
+}
