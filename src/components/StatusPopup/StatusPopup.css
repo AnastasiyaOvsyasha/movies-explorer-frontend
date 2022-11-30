@@ -1,0 +1,32 @@
+.status-popup {
+  position: absolute;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(32, 32, 32, 1);
+  font-family: 'Inter', 'Arial', serif;
+  font-style: normal;
+}
+
+.status-popup_status_opened {
+  display: flex;
+  justify-items: center;
+}
+
+.status-popup__container {
+  flex-direction: column;
+  margin: 100px auto 50px;
+  width: 396px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.status-popup__status {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 40px 0 60px;
+  text-align: center;
+}

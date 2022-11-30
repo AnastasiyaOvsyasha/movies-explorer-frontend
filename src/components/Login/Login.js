@@ -1,29 +1,29 @@
-import { isValidElement, useState } from "react";
 import "./Login.css";
 import Logo from "../Logo/Logo";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { REGEXP_EMAIL } from "../../utils/constants";
+import { EMAIL_REGEX } from "../../utils/constants";
 
-const Login = ({ handleLogin }) => {
-
+const Login = ({ handleLogin, errorMesage, setErrorMessage }) => {
   const {
     register,
-    formState: { errors },
+    formState: { errors, isValid },
     handleSubmit,
   } = useForm({
     mode: "all",
   });
 
+  console.log(errorMesage);
+
   const onSubmit = (data) => {
-    console.log(data);
-    handleLogin();
-  }
+    setErrorMessage("");
+    handleLogin(data);
+  };
 
   return (
     <form className="login" onSubmit={handleSubmit(onSubmit)}>
       <Logo />
-      <h2 className='login__greetings'>Рады видеть!</h2>
+      <h2 className="login__greetings">Рады видеть!</h2>
       <label className="login__label">
         E-mail
         <input
@@ -32,8 +32,8 @@ const Login = ({ handleLogin }) => {
           {...register("email", {
             required: "Это поле обязазательное для заполнения",
             pattern: {
-              value: REGEXP_EMAIL,
-              message: "Здесь должен быть корректный e-mail",
+              value: EMAIL_REGEX,
+              message: "Введите корректный e-mail",
             },
           })}
         />
@@ -49,7 +49,7 @@ const Login = ({ handleLogin }) => {
           className="login__input"
           type="password"
           {...register("password", {
-            required: "Это поле обязазательное для заполнения",
+            required: "Это поле обязазательно для заполнения",
           })}
         />
       </label>
@@ -60,16 +60,26 @@ const Login = ({ handleLogin }) => {
         {errors.password ? errors.password.message : "1"}
       </span>
 
-      <button className="login__button">Войти</button>
+      <span
+        className={`login__server-message ${
+          errorMesage ? "login__server-message_active" : ""
+        }`}
+      >
+        {errorMesage ? errorMesage : "1"}
+      </span>
+      <button
+        className={`login__button ${!isValid ? "login__button_disable" : ""}`}
+      >
+        Войти
+      </button>
       <p className="login__subtitle">
         Ещё не зарегистрированы?{" "}
         <Link to="/signup" className="login__link">
           Регистрация
         </Link>
       </p>
-
     </form>
-  )
-}
+  );
+};
 
 export default Login;

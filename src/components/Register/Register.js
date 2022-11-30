@@ -2,19 +2,20 @@ import "./Register.css";
 import Logo from "../Logo/Logo";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { REGEXP_EMAIL } from "../../utils/constants";
+import { EMAIL_REGEX, NAME_REGEX } from "../../utils/constants";
 
-const Register = () => {
+const Register = ({ handleSignup, errorMesage, setErrorMessage }) => {
   const {
     register,
-    formState: { errors },
+    formState: { errors, isValid },
     handleSubmit,
   } = useForm({
     mode: "all",
   });
 
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
+    handleSignup(data);
+    setErrorMessage("");
   };
 
   return (
@@ -37,6 +38,10 @@ const Register = () => {
               value: 30,
               message: "Имя не должно содержать больше 30 букв",
             },
+            pattern: {
+              value: NAME_REGEX,
+              message: "Поле может содержать буквы, тире или пробелы",
+            },
           })}
         />
       </label>
@@ -56,7 +61,7 @@ const Register = () => {
           {...register("email", {
             required: "Это поле обязазательно для заполнения",
             pattern: {
-              value: REGEXP_EMAIL,
+              value: EMAIL_REGEX,
               message: "Введён некорректный e-mail",
             },
           })}
@@ -64,8 +69,9 @@ const Register = () => {
       </label>
       <hr className="register__line"></hr>
       <span
-        className={`register__error ${errors.email && "register__error_active"
-          }`}
+        className={`register__error ${
+          errors.email && "register__error_active"
+        }`}
       >
         {errors.email ? errors.email.message : "1"}
       </span>
@@ -82,22 +88,34 @@ const Register = () => {
       </label>
       <hr className="register__line"></hr>
       <span
-        className={`register__error ${errors.password && "register__error_active"
-          }`}
+        className={`register__error ${
+          errors.password && "register__error_active"
+        }`}
       >
         {errors.password ? errors.password.message : "1"}
       </span>
-
-      <button className="register__button-caption">Зарегистрироваться</button>
+      <span
+        className={`register__server-message ${
+          errorMesage ? "register__server-message_active" : ""
+        }`}
+      >
+        {errorMesage ? errorMesage : "1"}
+      </span>
+      <button
+        className={`register__button-caption ${
+          !isValid ? "register__button_disabled" : ""
+        }  `}
+      >
+        Зарегистрироваться
+      </button>
       <p className="register__subtitle">
         Уже зарегистрированы?{" "}
         <Link to="/signin" className="register__link">
           Войти
         </Link>
       </p>
-
     </form>
-  )
-}
+  );
+};
 
 export default Register;

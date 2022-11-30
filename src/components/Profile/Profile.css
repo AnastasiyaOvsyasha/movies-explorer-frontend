@@ -40,10 +40,11 @@
 
 .profile__btn_type_edit {
   width: 100%;
-  background-color: unset;
-  border: unset;
   font-size: 13px;
   line-height: 16px;
+  background-color: unset;
+  border: unset;
+
   padding: 0;
   margin: 0 0 16px;
   cursor: pointer;
@@ -66,6 +67,46 @@
   opacity: 70%;
 }
 
+.profile__server-message {
+  margin: 0 0 6px;
+  font-weight: 400;
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 10px;
+  line-height: 1.2;
+  visibility: hidden;
+  color: red;
+}
+
+.profile__server-message_active {
+  visibility: visible;
+}
+
+.profile__saved-button {
+  margin: 0 0 16px;
+  height: 45px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.21;
+  border-radius: 3px;
+  border: none;
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(43, 224, 128, 1);
+}
+
+.profile__saved-button:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+.profile__saved-button_disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  background: rgba(248, 248, 248, .5);
+}
+
 @media (max-width: 320px) {
   .profile__form-body {
     width: 260px;
@@ -75,5 +116,5 @@
 
 .profile__button-logout {
   font-size: 12px;
-  line-height: 15px;
+  line-height: 1.25;
 }
