@@ -67,7 +67,7 @@
   top: 0;
   left: 0;
   border-radius: 50px;
-  background: rgba(47, 47, 47, 1);
+  background: rgba(61, 220, 132, 1);
 }
 
 .preloader__round::after,
@@ -82,12 +82,12 @@
 }
 
 .preloader__round::after {
-  animation: preloader-inside-white 1s ease-in-out infinite;
+  animation: preloader-inside-white 2s ease infinite;
   background: white;
 }
 
 .preloader__round::before {
-  background: rgba(47, 47, 47, 1);
+  background: rgba(61, 220, 132, 1);
   z-index: 10;
-  animation: preloader-inside-red 1s ease-in-out infinite;
+  animation: preloader-inside-red 2s ease infinite;
 }

@@ -69,7 +69,7 @@ const Profile = ({
       <div className="profile__form-username">
         <p className="profile__form-title">Имя</p>
         <input
-          className="profile__value"
+          className="profile__form-value"
           disabled={isDisabledEditProfile ? "" : "disabled"}
           type="text"
           {...register("name", {
@@ -92,7 +92,7 @@ const Profile = ({
       <div className="profile__email">
         <p className="profile__form-title">E-mail</p>
         <input
-          className="profile__value"
+          className="profile__form-value"
           type="email"
           disabled={isDisabledEditProfile ? "" : "disabled"}
           {...register("email", {

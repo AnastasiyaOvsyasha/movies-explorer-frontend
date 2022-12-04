@@ -13,7 +13,6 @@ import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import StatusPopup from "../StatusPopup/StatusPopup";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import OpenRoutes from "../../utils/OpenRoutes";
 import { getMovies } from "../../utils/MoviesApi";
@@ -26,8 +25,7 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("logIn"));
   const [isPopupOpened, setIsPopupOpned] = useState(false);
-  const [isStatusPopupOpened, setIsStatusPopupOpened] = useState(false);
-  const [errorMesage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [savedMovies, setSavedMovies] = useState([]);
   const [isPreloaderActive, setIsPreloaderActive] = useState(false);
   const [isDisabledEditProfile, setIsDisabledEditProfile] = useState(false);
@@ -105,14 +103,10 @@ const App = () => {
   };
 
   const handleUpdateUserData = ({ name, email }) => {
-    MainApi.updateUser(name, email)
+    MainApi.updateUserInfo(name, email)
       .then((res) => {
         setCurrentUser(res.data);
         setIsDisabledEditProfile(false);
-        setIsStatusPopupOpened(true);
-        setTimeout(() => {
-          setIsStatusPopupOpened(false);
-        }, 1000);
       })
       .catch((err) => {
         forceLogOutIfErr(err);
@@ -126,7 +120,7 @@ const App = () => {
 
   const getUserData = () => {
     if (isLoggedIn) {
-      MainApi.getCurrentUser()
+      MainApi.getUserInfo()
         .then((res) => {
           setCurrentUser(res.data);
         })
@@ -174,7 +168,7 @@ const App = () => {
   };
 
   const tokenCheck = () => {
-    MainApi.getCurrentUser()
+    MainApi.getUserInfo()
       .then((res) => {
         if (res.data._id) {
           setCurrentUser(res.data);
@@ -254,7 +248,7 @@ const App = () => {
                   <Profile
                     handleLogout={handleLogout}
                     handleUpdateUserData={handleUpdateUserData}
-                    errorMesage={errorMesage}
+                    errorMessage={errorMessage}
                     setErrorMessage={setErrorMessage}
                     isDisabledEditProfile={isDisabledEditProfile}
                     setIsDisabledEditProfile={setIsDisabledEditProfile}
@@ -270,7 +264,7 @@ const App = () => {
                 element={
                   <Register
                     handleSignup={handleSignup}
-                    errorMesage={errorMesage}
+                    errorMessage={errorMessage}
                     setErrorMessage={setErrorMessage}
                   />
                 }
@@ -280,7 +274,7 @@ const App = () => {
                 element={
                   <Login
                     handleLogin={handleLogin}
-                    errorMesage={errorMesage}
+                    errorMessage={errorMessage}
                     setErrorMessage={setErrorMessage}
                   />
                 }
@@ -289,10 +283,6 @@ const App = () => {
           </Routes>
         </main>
         <Footer />
-        <StatusPopup
-          isLoggedIn={isLoggedIn}
-          isStatusPopupOpened={isStatusPopupOpened}
-        />
         <BurgerPopup
           isPopupOpened={isPopupOpened}
           handlePopupOpen={handlePopupOpen}

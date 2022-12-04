@@ -36,7 +36,7 @@ export function logout() {
   }).then((res) => checkResponse(res));
 }
 
-export function getCurrentUser() {
+export function getUserInfo() {
   return fetch(`${MAIN_API_URL}/users/me`, {
     method: "GET",
     credentials: "include",
@@ -46,7 +46,7 @@ export function getCurrentUser() {
   }).then((res) => checkResponse(res));
 }
 
-export function updateUser(name, email) {
+export function updateUserInfo(name, email) {
   return fetch(`${MAIN_API_URL}/users/me`, {
     method: "PATCH",
     credentials: "include",
@@ -57,38 +57,14 @@ export function updateUser(name, email) {
   }).then((res) => checkResponse(res));
 }
 
-export function saveMovie(
-  country,
-  director,
-  duration,
-  year,
-  description,
-  image,
-  trailerLink,
-  thumbnail,
-  movieId,
-  nameRU,
-  nameEN
-) {
+export function saveMovie(movieData){
   return fetch(`${MAIN_API_URL}/movies`, {
     method: "POST",
     credentials: "include",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      country,
-      director,
-      duration,
-      year,
-      description,
-      image,
-      trailerLink,
-      thumbnail,
-      movieId,
-      nameRU,
-      nameEN,
-    }),
+    body: JSON.stringify(movieData),
   }).then((res) => checkResponse(res));
 }
 

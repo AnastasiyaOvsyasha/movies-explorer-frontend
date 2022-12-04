@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { EMAIL_REGEX } from "../../utils/constants";
 
-const Login = ({ handleLogin, errorMesage, setErrorMessage }) => {
+const Login = ({ handleLogin, errorMessage, setErrorMessage }) => {
   const {
     register,
     formState: { errors, isValid },
@@ -12,8 +12,6 @@ const Login = ({ handleLogin, errorMesage, setErrorMessage }) => {
   } = useForm({
     mode: "all",
   });
-
-  console.log(errorMesage);
 
   const onSubmit = (data) => {
     setErrorMessage("");
@@ -62,10 +60,10 @@ const Login = ({ handleLogin, errorMesage, setErrorMessage }) => {
 
       <span
         className={`login__server-message ${
-          errorMesage ? "login__server-message_active" : ""
+          errorMessage ? "login__server-message_active" : ""
         }`}
       >
-        {errorMesage ? errorMesage : "1"}
+        {errorMessage ? errorMessage : "1"}
       </span>
       <button
         className={`login__button ${!isValid ? "login__button_disable" : ""}`}
