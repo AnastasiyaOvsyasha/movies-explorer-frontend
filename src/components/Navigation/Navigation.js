@@ -1,12 +1,12 @@
 import './Navigation.css';
 import { Link } from 'react-router-dom';
 
-const Navigation = ({ isLoggedIn, handlePopupOpen }) => {
+const Navigation = ({ loggedIn, handlePopupOpen }) => {
   const windowInnerWidth = window.innerWidth;
 
   return (
     <>
-      {!isLoggedIn ? (
+      {!loggedIn  ? (
         <>
           <Link to="/signup" className="navigation__link_active">
             Регистрация

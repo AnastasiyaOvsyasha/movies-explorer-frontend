@@ -7,17 +7,15 @@ const MoviesCard = ({ movie, handleClick }) => {
   const [isSaved, setIsSaved] = useState(movie.saved);
   const { pathname } = useLocation();
 
-  // Форматирование продолжительности фильма в часы
   const getTimeFromMins = (duration) => {
     let hours = Math.trunc(duration / 60);
     let minutes = duration % 60;
     return `${hours}ч ${minutes}м`;
   };
 
-  // Обрабокта на жатия клика на иконке
   const handleClickOnIcon = () => {
-    setIsSaved(!isSaved); // Меняем сстатус сохранения фильма
-    handleClick(movie, isSaved); // Выполняем функцию, которая приходит в пропсах (либо из movies либо ищ saved-movies)
+    setIsSaved(!isSaved);
+    handleClick(movie, isSaved);
   };
 
   return (

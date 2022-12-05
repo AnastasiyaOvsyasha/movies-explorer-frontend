@@ -10,7 +10,7 @@ const Register = ({ handleSignup, errorMesage, setErrorMessage }) => {
     formState: { errors, isValid },
     handleSubmit,
   } = useForm({
-    mode: "all",
+    mode: "onChange",
   });
 
   const onSubmit = (data) => {

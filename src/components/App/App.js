@@ -1,5 +1,8 @@
 import "./App.css";
 import "../../vendor/fonts/fonts.css";
+import { useEffect } from "react";
+import { useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import BurgerPopup from "../BurgerPopup/BurgerPopup";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -10,20 +13,17 @@ import Register from "../Register/Register";
 import Login from "../Login/Login";
 import Profile from "../Profile/Profile";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
-import { useEffect } from "react";
-import { useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import OpenRoutes from "../../utils/OpenRoutes";
-import { getMovies } from "../../utils/MoviesApi";
+import { getMoviesAll } from "../../utils/MoviesApi";
 import { changesMovieDate } from "../../utils/ChangesMovieDate";
 import { setStatusSaved } from "../../utils/setStatusSaved";
 import ProtectedRoute from "../ProtectedRoute/ProtectedPoute";
 import * as MainApi from "../../utils/MainApi";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState({});
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("logIn"));
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("logIn"));
   const [isPopupOpened, setIsPopupOpned] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [savedMovies, setSavedMovies] = useState([]);
@@ -40,24 +40,7 @@ const App = () => {
 
   const [allMovies, setAllMovies] = useState(extractAllMoviesLocal());
 
-  let navigate = useNavigate();
-
-  const getAllMovies = () => {
-    setIsPreloaderActive(true);
-    getMovies()
-      .then((res) => {
-        let moviesList = res.map((item) => changesMovieDate(item));
-        moviesList = moviesList.map((item) =>
-          setStatusSaved(item, savedMovies)
-        );
-        setAllMovies(moviesList);
-        localStorage.setItem("allMovies", JSON.stringify(moviesList));
-        setIsPreloaderActive(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  const navigate = useNavigate();
 
   const handleSignup = (data) => {
     const { name, email, password } = data;
@@ -77,7 +60,7 @@ const App = () => {
     MainApi.login(email, password)
       .then((data) => {
         if (data.message === "Athorization successful") {
-          setIsLoggedIn(true);
+          setLoggedIn(true);
           localStorage.setItem("logIn", true);
           getUserData();
           navigate("/movies");
@@ -91,7 +74,7 @@ const App = () => {
   const handleLogout = () => {
     MainApi.logout()
       .then((res) => {
-        setIsLoggedIn(false);
+        setLoggedIn(false);
         localStorage.clear();
         setAllMovies([]);
         setSavedMovies([]);
@@ -103,7 +86,7 @@ const App = () => {
   };
 
   const handleUpdateUserData = ({ name, email }) => {
-    MainApi.updateUserInfo(name, email)
+    MainApi.updateUser(name, email)
       .then((res) => {
         setCurrentUser(res.data);
         setIsDisabledEditProfile(false);
@@ -119,8 +102,8 @@ const App = () => {
   };
 
   const getUserData = () => {
-    if (isLoggedIn) {
-      MainApi.getUserInfo()
+    if (loggedIn) {
+      MainApi.getCurrentUser()
         .then((res) => {
           setCurrentUser(res.data);
         })
@@ -151,6 +134,23 @@ const App = () => {
     }
   };
 
+  const getAllMovies = () => {
+    setIsPreloaderActive(true);
+    getMoviesAll()
+      .then((res) => {
+        let moviesList = res.map((item) => changesMovieDate(item));
+        moviesList = moviesList.map((item) =>
+          setStatusSaved(item, savedMovies)
+        );
+        setAllMovies(moviesList);
+        localStorage.setItem("allMovies", JSON.stringify(moviesList));
+        setIsPreloaderActive(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const handleDeleteMovie = (movie) => {
     MainApi.deleteMovie(movie._id)
       .then(() => {
@@ -168,11 +168,11 @@ const App = () => {
   };
 
   const tokenCheck = () => {
-    MainApi.getUserInfo()
+    MainApi.getCurrentUser()
       .then((res) => {
         if (res.data._id) {
           setCurrentUser(res.data);
-          setIsLoggedIn(true);
+          setLoggedIn(true);
           localStorage.setItem("logIn", true);
         }
       })
@@ -181,7 +181,7 @@ const App = () => {
 
   const forceLogOutIfErr = (err) => {
     if (err.response === "Authorization is needed") {
-      setIsLoggedIn(false);
+      setLoggedIn(false);
       localStorage.clear();
       setAllMovies([]);
       setSavedMovies([]);
@@ -195,13 +195,13 @@ const App = () => {
   };
 
   useEffect(() => {
-    if (isLoggedIn) {
+    if (loggedIn) {
       tokenCheck();
     }
-  }, [isLoggedIn]);
+  }, [loggedIn]);
 
   useEffect(() => {
-    if (isLoggedIn) {
+    if (loggedIn) {
       MainApi.getSavedMovies()
         .then((data) => setSavedMovies(data.data))
         .catch((err) => {
@@ -209,16 +209,16 @@ const App = () => {
           console.log(err);
         });
     }
-  }, [isLoggedIn]);
+  }, [loggedIn]);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="app">
-        <Header isLoggedIn={isLoggedIn} handlePopupOpen={handlePopupOpen} />
+        <Header loggedIn={loggedIn} handlePopupOpen={handlePopupOpen} />
         <main>
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route element={<ProtectedRoute isLoggedIn={isLoggedIn} />}>
+            <Route element={<ProtectedRoute loggedIn={loggedIn} />}>
               <Route
                 element={
                   <Movies
@@ -258,7 +258,7 @@ const App = () => {
               />
               <Route path="/*" element={<NotFoundPage />} />
             </Route>
-            <Route element={<OpenRoutes isLoggedIn={isLoggedIn} />}>
+            <Route element={<OpenRoutes loggedIn={loggedIn} />}>
               <Route
                 path="/signup"
                 element={

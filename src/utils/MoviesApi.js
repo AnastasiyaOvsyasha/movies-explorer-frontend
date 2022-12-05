@@ -4,7 +4,7 @@ const checkResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
 }
 
-export const getMovies = () => {
+export const getMoviesAll = () => {
   return fetch(`${MOVIES_API_URL}/beatfilm-movies`, {
     method: "GET",
     headers: {

@@ -22,7 +22,7 @@ const Profile = ({
     setValue,
     watch,
   } = useForm({
-    mode: "all",
+    mode: "onChange",
   });
 
   const handleCLickLogout = () => {

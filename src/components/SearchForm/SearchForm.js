@@ -1,5 +1,5 @@
 import React from "react";
-import './SearchForm.css';
+import "./SearchForm.css";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import { useState } from "react";
 
@@ -26,13 +26,6 @@ const SearchForm = ({
     setIsCheckBoxActive(!isCheckBoxActive);
   };
 
-  // Обработка отправки формы по нажатию Enter
-  const handleKeydown = (e) => {
-    if (e.key === "Enter") {
-      handleSubmit(e);
-    }
-  };
-
   const handleChange = (e) => {
     const value = e.target.value;
     setText(value);
@@ -47,27 +40,31 @@ const SearchForm = ({
 
   return (
     <section className="search-form">
-      <form className='search-form__form' onSubmit={handleSubmit}
+      <form
+        className="search-form__form"
+        onSubmit={handleSubmit}
         name="search"
         noValidate
-        onKeyDown={handleKeydown}>
+      >
         <div className="search-form__input-container">
           <input
-            className='search-form__input'
+            className="search-form__input"
             type="text"
             name="request"
             value={text}
             autoFocus
-            placeholder='Фильм'
+            placeholder="Фильм"
             required
             onChange={handleChange}
             aria-label="Ввод фильма в форму поиска"
           />
           <button className='search-form__button id="searchBtn"'>
-            <div className='search-form__button-icon'></div>
+            <div className="search-form__button-icon"></div>
           </button>
 
-          <p className={`search-form__error-container ${isSpanActive ? "search-form__error-message" : ""
+          <p
+            className={`search-form__error-container ${
+              isSpanActive ? "search-form__error-message" : ""
             }`}
           >
             Необходимо ввести ключевое слово

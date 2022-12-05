@@ -10,7 +10,7 @@ const Login = ({ handleLogin, errorMessage, setErrorMessage }) => {
     formState: { errors, isValid },
     handleSubmit,
   } = useForm({
-    mode: "all",
+    mode: "onChange",
   });
 
   const onSubmit = (data) => {
