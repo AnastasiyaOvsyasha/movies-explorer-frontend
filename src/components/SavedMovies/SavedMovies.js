@@ -38,7 +38,7 @@ const SavedMovies = ({ savedMovies, handleDeleteMovie }) => {
       {
         savedMovies.length === 0
           ?
-          (<p className='saved-movies__blank-text'>Вы еще не сохранили не один фильм.</p>)
+          (<p className='saved-movies__blank-text'>Вы еще не сохранили ни одинго фильма</p>)
           :
 
           <MoviesCardList moviesToRender={moviesToRender} flag={flag} handleClick={handleDeleteMovie} allMovies={['anytext']} />

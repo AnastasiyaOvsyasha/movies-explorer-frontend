@@ -89,7 +89,7 @@ const MoviesCardList = ({ moviesToRender, flag, handleClick, allMovies }) => {
           </button>
         </>
       ) : (
-        <div className="movies-card-list__not-found">Ничего не найдено...</div>
+        <div className="movies-card-list__not-found">Ничего не найдено, как так-то:(</div>
       )}
     </div>
   );

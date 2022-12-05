@@ -1,15 +1,14 @@
 const MOVIES_API_URL = "https://api.nomoreparties.co";
-const MAIN_API_URL = 'http://localhost:4000';
-//"https://api.diploma.praktikum.nomoredomains.icu";
-//'http://localhost:4000'
-const EMAIL_REGEX = /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
+const MAIN_API_URL = "https://api.diploma.praktikum.nomoredomains.icu";
+const EMAIL_REGEX =
+  /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 const NAME_REGEX = /[A-Za-zА-Яа-я-\s]+$/;
 const SHORT_DURATION = 40;
 const CARDS_PER_PAGE_LARGE = 12;
 const CARDS_PER_PAGE_MEDIUM = 8;
 const CARDS_PER_PAGE_SMALL = 5;
 const CARDS_ADD_LARGE = 3;
-const CARDS_ADD_MEDIUM =2;
+const CARDS_ADD_MEDIUM = 2;
 
 export {
   MOVIES_API_URL,
