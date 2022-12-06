@@ -82,7 +82,7 @@ const App = () => {
         navigate("/");
         console.log(res);
       })
-      .catch((err) => forceLogOutIfErr(err));
+      .catch((err) => logOutIfErrOut(err));
   };
 
   const handleUpdateUserData = ({ name, email }) => {
@@ -92,7 +92,7 @@ const App = () => {
         setIsDisabledEditProfile(false);
       })
       .catch((err) => {
-        forceLogOutIfErr(err);
+        logOutIfErrOut(err);
         setErrorMessage(err.response);
       });
   };
@@ -107,7 +107,7 @@ const App = () => {
         .then((res) => {
           setCurrentUser(res.data);
         })
-        .catch((err) => forceLogOutIfErr(err));
+        .catch((err) => logOutIfErrOut(err));
     }
   };
 
@@ -130,7 +130,7 @@ const App = () => {
           setAllMovies(updatedAllMovies);
           localStorage.setItem("allMovies", JSON.stringify(updatedAllMovies));
         })
-        .catch((err) => forceLogOutIfErr(err));
+        .catch((err) => logOutIfErrOut(err));
     }
   };
 
@@ -164,7 +164,7 @@ const App = () => {
         setAllMovies(updatedAllMovies);
         localStorage.setItem("allMovies", JSON.stringify(updatedAllMovies));
       })
-      .catch((err) => forceLogOutIfErr(err));
+      .catch((err) => logOutIfErrOut(err));
   };
 
   const tokenCheck = () => {
@@ -176,10 +176,10 @@ const App = () => {
           localStorage.setItem("logIn", true);
         }
       })
-      .catch((err) => forceLogOutIfErr(err));
+      .catch((err) => logOutIfErrOut(err));
   };
 
-  const forceLogOutIfErr = (err) => {
+  const logOutIfErrOut = (err) => {
     if (err.response === "Authorization is needed") {
       setLoggedIn(false);
       localStorage.clear();
@@ -205,7 +205,7 @@ const App = () => {
       MainApi.getSavedMovies()
         .then((data) => setSavedMovies(data.data))
         .catch((err) => {
-          forceLogOutIfErr(err);
+          logOutIfErrOut(err);
           console.log(err);
         });
     }
