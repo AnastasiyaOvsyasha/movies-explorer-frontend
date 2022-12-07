@@ -1,0 +1,119 @@
+.profile__form-body {
+  margin: 74px auto 70px;
+  width: 410px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1);
+  text-align: center;
+
+}
+
+.profile__form-username {
+  width: 100%;
+  margin-top: 123px;
+  padding-bottom: 16px;
+  display: flex;
+  border-bottom: 1px solid rgba(232, 232, 232, 1);
+}
+
+.profile__email {
+  margin: 17px 0 220px;
+  width: 100%;
+  display: flex;
+}
+
+.profile__form-title {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.18;
+}
+
+.profile__form-value {
+  margin: 0 0 0 auto;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1.18;
+  background-color: transparent;
+  border: none;
+  color: rgba(0, 0, 0, 1);
+  text-align: end;
+}
+
+.profile__btn_type_edit {
+  width: 100%;
+  font-size: 13px;
+  line-height: 16px;
+  background-color: unset;
+  border: unset;
+  padding: 0;
+  margin: 0 0 16px;
+  cursor: pointer;
+}
+
+.profile__btn_type_edit:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.profile__button-logout {
+  font-weight: 500;
+  color: #FF3055;
+  background-color: unset;
+  border: unset;
+}
+
+.profile__button-logout:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.profile__server-message {
+  margin: 0 0 6px;
+  font-weight: 400;
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 10px;
+  line-height: 1.2;
+  visibility: hidden;
+  color: red;
+}
+
+.profile__server-message_active {
+  visibility: visible;
+}
+
+.profile__saved-button {
+  margin: 0 0 16px;
+  height: 45px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.21;
+  border-radius: 3px;
+  border: none;
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(43, 224, 128, 1);
+}
+
+.profile__saved-button:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+.profile__saved-button_disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  background: rgba(248, 248, 248, .5);
+}
+
+@media (max-width: 320px) {
+  .profile__form-body {
+    width: 260px;
+    margin: 70px 30px 30px 40px;
+  }
+}
+
+.profile__button-logout {
+  font-size: 12px;
+  line-height: 1.25;
+}

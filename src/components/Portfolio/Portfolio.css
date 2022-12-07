@@ -1,0 +1,126 @@
+.portfolio {
+  font-weight: 400;
+  margin: 0 auto 0;
+  padding: 0 70px 125px;
+  padding-bottom: 125px;
+  max-width: 1280px;
+  box-sizing: border-box;
+}
+
+.portfolio__title {
+  margin: 0 0 50px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.11;
+  color: rgba(160, 160, 160, 1)
+}
+
+.portfolio__list {
+  margin: 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.portfolio__item {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  transition: 0.3s;
+}
+
+.portfolio__item:not(:last-child) {
+  padding: 0 0 19px;
+  border-bottom: 1px solid rgba(66, 66, 66, 1);
+}
+
+.portfolio__item:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.portfolio__link-text {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.66;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1)
+}
+
+.porfolio__link:hover {
+  cursor: pointer;
+}
+
+.portfolio__icon {
+  margin-left: auto;
+  width: 29px;
+  height: 29px;
+  background-image: url('../../images/portfolio__arrow.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.portfolio__icon:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .portfolio {
+    padding: 0 50px 90px;
+  }
+
+  .portfolio__title {
+    margin: 0 0 50px;
+  }
+
+  .portfolio__link-text {
+    font-size: 28px;
+    line-height: 1.78;
+  }
+
+  .portfolio__icon {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+@media (max-width: 320px) {
+  .portfolio {
+    padding: 0 14px 90px;
+  }
+
+  .portfolio__title {
+    margin: 0 0 40px;
+    font-size: 14px;
+    line-height: 1.42;
+  }
+
+  .portfolio__list {
+    margin: 0;
+  }
+
+  .portfolio__link-text {
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+  .portfolio__icon {
+    width: 18px;
+    height: 18px;
+    background-size: 18px 18px;
+  }
+
+  .portfolio__item:not(:last-child) {
+    padding: 0 0 19px;
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
+  }
+
+  .portfolio {
+    padding-bottom: 70px;
+  }
+}

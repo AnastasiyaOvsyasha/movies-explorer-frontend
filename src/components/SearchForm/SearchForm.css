@@ -1,0 +1,116 @@
+.search-form {
+  margin: 70px 70px 10px 70px;
+  padding-bottom: 69px;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.search-form__form {
+  background-color: rgba(249, 249, 249, 1);
+  border-radius: 9px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-form__input-container {
+  min-height: 72px;
+  width: 100%;
+  background-image: url(../../images/magnifying_glass_grey.svg);
+  background-position: center left 19px;
+  background-repeat: no-repeat;
+  background-size: 34px 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-form__input {
+  margin: 15px 0 15px 63px;
+  padding: 10px 0;
+  font-size: 18px;
+  line-height: 20px;
+  border: 0;
+  background-color: unset;
+}
+
+.search-form__input::placeholder {
+  font-size: 18px;
+  line-height: 20px;
+  color: rgba(160, 160, 160, 1);
+}
+
+.search-form__button {
+  margin: 0 30px 0 0;
+  width: 34px;
+  height: 34px;
+  border: unset;
+  border-radius: 100%;
+  background-image: url(../../images/find__movies__2version.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.search-form__button:hover {
+  opacity: 0.7;
+}
+
+.search-form__error-container {
+  font-size: 11px;
+  width: 100%;
+  top: -28px;
+  left: 0;
+  text-align: center;
+  position: absolute;
+  left: 0;
+}
+
+.search-form__error-message {
+  padding: 10px 15px;
+  background-color: rgba(253, 253, 253, 1);
+  border: 1px solid rgba(203, 203, 205, 1);
+  box-shadow: 0px 11px 18px 0px rgba(34, 60, 80, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .search-form {
+    margin: 80px 30px 10px 30px;
+    padding-bottom: 109px;
+  }
+
+  .search-form__button {
+    margin-right: 19px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .search-form {
+    padding-bottom: 35px;
+    margin: 80px 10px 10px 10px;
+  }
+
+  .search-form__form {
+    display: flex;
+    flex-direction: column;
+    background-color: unset;
+  }
+
+  .search-form__input-container {
+    background-image: unset;
+    background-color: rgba(249, 249, 249, 1);
+    border-radius: 9px;
+  }
+
+  .search-form__input {
+    margin: 0;
+    padding: 25px 19px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .search-form__input::placeholder {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
